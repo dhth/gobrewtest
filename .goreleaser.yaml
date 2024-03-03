@@ -1,5 +1,9 @@
 version: 1
 
+variables:
+  homepage: ""
+  description: A completely useless binary; used for testing purposes
+
 before:
   hooks:
     - go mod tidy
@@ -23,6 +27,16 @@ signs:
       - "${artifact}"
       - "--yes" # needed on cosign 2.0.0+
     artifacts: all
+
+
+brews:
+  - repository:
+      owner: dhth
+      name: homebrew-tap
+    folder: Formula
+    license: MIT
+    homepage: "{{ with .Var.homepage }}{{ . }}{{ else }}https://github.com/dhth/{{ .ProjectName }}{{ end }}"
+    description: "{{ .Var.description }}"
 
 archives:
   - format: tar.gz
