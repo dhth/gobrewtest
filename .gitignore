@@ -1,2 +1,4 @@
 gobrewtest
 dist
+cosign.key
+cosign.pub
