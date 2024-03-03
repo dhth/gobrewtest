@@ -13,9 +13,6 @@ builds:
       - windows
       - darwin
 
-signs:
-  - artifacts: checksum
-
 archives:
   - format: tar.gz
     name_template: >-
