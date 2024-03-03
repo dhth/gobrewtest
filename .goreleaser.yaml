@@ -1,9 +1,5 @@
 version: 1
 
-variables:
-  homepage: ""
-  description: A completely useless binary; used for testing purposes
-
 before:
   hooks:
     - go mod tidy
@@ -30,13 +26,14 @@ signs:
 
 
 brews:
-  - repository:
+  - name: gobrewtest
+    repository:
       owner: dhth
       name: homebrew-tap
     folder: Formula
     license: MIT
-    homepage: "{{ with .Var.homepage }}{{ . }}{{ else }}https://github.com/dhth/{{ .ProjectName }}{{ end }}"
-    description: "{{ .Var.description }}"
+    homepage: "https://github.com/dhth/gobrewtest"
+    description: "A completely useless binary; used for testing purposes"
 
 archives:
   - format: tar.gz
