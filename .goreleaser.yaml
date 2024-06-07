@@ -1,4 +1,4 @@
-version: 1
+version: 2
 
 before:
   hooks:
@@ -29,7 +29,7 @@ brews:
     repository:
       owner: dhth
       name: homebrew-tap
-    folder: Formula
+    directory: Formula
     license: MIT
     homepage: "https://github.com/dhth/gobrewtest"
     description: "A completely useless binary; used for testing purposes"
