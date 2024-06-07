@@ -8,5 +8,5 @@ import (
 
 func main() {
 	arch := runtime.GOOS
-	fmt.Fprintf(os.Stdout, "(v0.1.8) Hola, %s!\n", arch)
+	fmt.Fprintf(os.Stdout, "(v0.1.9) Hola, %s!\n", arch)
 }
