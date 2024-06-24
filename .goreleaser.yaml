@@ -1,5 +1,10 @@
 version: 2
 
+release:
+  draft: true
+  extra_files:
+  - glob: ./cosign.pub
+
 before:
   hooks:
     - go mod tidy
@@ -22,7 +27,6 @@ signs:
       - "${artifact}"
       - "--yes" # needed on cosign 2.0.0+
     artifacts: all
-
 
 brews:
   - name: gobrewtest
