@@ -4,20 +4,10 @@ import (
 	"fmt"
 	"os"
 	"runtime"
-	"runtime/debug"
 )
 
-var (
-	version = "dev"
-)
+const version = "0.3.0"
 
 func main() {
-	v := version
-	if version == "dev" {
-		info, ok := debug.ReadBuildInfo()
-		if ok {
-			v = info.Main.Version
-		}
-	}
-	fmt.Fprintf(os.Stdout, "(%s) Hola, %s!\n", v, runtime.GOOS)
+	fmt.Fprintf(os.Stdout, "(%s) Hola, %s!\n", version, runtime.GOOS)
 }
