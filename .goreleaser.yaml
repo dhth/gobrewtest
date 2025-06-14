@@ -28,15 +28,16 @@ signs:
       - "--yes"
     artifacts: checksum
 
-brews:
+homebrew_casks:
   - name: gobrewtest
     repository:
       owner: dhth
       name: homebrew-tap
-    directory: Formula
+    homepage: https://github.com/dhth/gobrewtest
+    description: A completely useless binary; used for testing purposes
     license: MIT
-    homepage: "https://github.com/dhth/gobrewtest"
-    description: "A completely useless binary; used for testing purposes"
+    conflicts:
+      - formula: gobrewtest
 
 changelog:
   sort: asc
