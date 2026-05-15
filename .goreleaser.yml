@@ -21,7 +21,6 @@ signs:
     args:
       - "sign-blob"
       - "--bundle=${signature}"
-      - "--oidc-issuer=https://token.actions.githubusercontent.com"
       - "${artifact}"
       - "--yes"
     artifacts: checksum
