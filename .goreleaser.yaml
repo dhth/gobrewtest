@@ -36,8 +36,6 @@ homebrew_casks:
     homepage: https://github.com/dhth/gobrewtest
     description: A completely useless binary; used for testing purposes
     license: MIT
-    conflicts:
-      - formula: gobrewtest
 
 changelog:
   sort: asc
