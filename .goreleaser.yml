@@ -25,15 +25,6 @@ signs:
       - "--yes"
     artifacts: checksum
 
-homebrew_casks:
-  - name: gobrewtest
-    repository:
-      owner: dhth
-      name: homebrew-tap
-    homepage: https://github.com/dhth/gobrewtest
-    description: A completely useless binary; used for testing purposes
-    license: MIT
-
 changelog:
   sort: asc
   filters:

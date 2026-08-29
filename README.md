@@ -1,6 +1,6 @@
 # gobrewtest
 
-A demo project to test homebrew publishing using
+A demo project to test releasing pre-built go binaries using
 [goreleaser](https://github.com/goreleaser/goreleaser).
 
 🔐 Verifying release artifacts

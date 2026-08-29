@@ -1,0 +1,52 @@
+[settings]
+task.run_auto_install = false
+
+[tools]
+actionlint = "latest"
+cosign = "latest"
+go = "1.27.0"
+goreleaser = "latest"
+yamlfmt = "latest"
+
+[tasks.run-app]
+alias = "r"
+description = "Run the application"
+run = "go run ."
+
+[tasks.build]
+alias = "b"
+description = "Build the application"
+run = 'go build -ldflags "-w -s" .'
+
+[tasks.install]
+alias = "i"
+description = "Install the application"
+run = 'go install -ldflags "-w -s" .'
+
+[tasks."lint:actions"]
+alias = ["l:a"]
+description = "Lint GitHub Actions workflows"
+run = "actionlint"
+
+[tasks."lint:yaml"]
+alias = ["l:y"]
+description = "Lint YAML files"
+run = '''
+yamlfmt \
+	-lint \
+	-quiet \
+	-formatter 'retain_line_breaks_single=true' \
+	$(git ls-files '*.yml' '*.yaml')
+'''
+
+[tasks."release:check"]
+description = "Validate the GoReleaser configuration"
+run = "goreleaser check"
+
+[tasks."release:build"]
+description = "Build release artifacts without publishing"
+run = "goreleaser build --snapshot"
+
+[tasks.release]
+description = "Create and publish a release"
+run = "goreleaser release --clean"

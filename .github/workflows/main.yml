@@ -25,9 +25,13 @@ jobs:
             code:
               - "**/*.go"
               - "go.*"
+              - "mise.toml"
+              - "mise.lock"
               - ".github/workflows/main.yml"
             release:
-              - ".goreleaser.yaml"
+              - ".goreleaser.yml"
+              - "mise.toml"
+              - "mise.lock"
               - ".github/workflows/main.yml"
             workflows:
               - ".github/workflows/**.yml"
@@ -44,12 +48,12 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v6
-      - name: Set up Go
-        uses: actions/setup-go@v6
+      - name: Set up mise
+        uses: jdx/mise-action@v4
         with:
-          go-version-file: 'go.mod'
-      - name: go build
-        run: go build -v ./...
+          install_args: go
+      - name: Build
+        run: mise run build
 
   lint-yaml:
     needs: changes
@@ -58,7 +62,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v6
-      - uses: dhth/composite-actions/.github/actions/lint-yaml@main
+      - name: Set up mise
+        uses: jdx/mise-action@v4
+        with:
+          install_args: yamlfmt
+      - name: Lint YAML
+        run: mise run lint:yaml
 
   lint-workflows:
     needs: changes
@@ -67,7 +76,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v6
-      - uses: dhth/composite-actions/.github/actions/lint-actions@main
+      - name: Set up mise
+        uses: jdx/mise-action@v4
+        with:
+          install_args: actionlint
+      - name: Lint workflows
+        run: mise run lint:actions
 
   release-check:
     needs: changes
@@ -75,12 +89,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-      - name: Set up Go
-        uses: actions/setup-go@v6
+      - name: Set up mise
+        uses: jdx/mise-action@v4
         with:
-          go-version-file: 'go.mod'
+          install_args: go goreleaser
       - name: Release check
-        uses: goreleaser/goreleaser-action@v7
-        with:
-          version: 'v2.15.4'
-          args: check
+        run: mise run release:check
