@@ -1,12 +1,16 @@
 [settings]
 task.run_auto_install = false
 
+[tool_alias]
+gobrewtest-release = "github:dhth/gobrewtest"
+
 [tools]
 actionlint = "latest"
 cosign = "latest"
 go = "1.27.0"
 goreleaser = "latest"
 yamlfmt = "latest"
+gobrewtest-release = "v0.5.0"
 
 [tasks.run-app]
 alias = "r"

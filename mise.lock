@@ -129,6 +129,41 @@ url = "https://dl.google.com/go/go1.27.0.darwin-amd64.tar.gz"
 checksum = "sha256:f0c0a0d33ba94f4d2c5dbc887334ce678b21813504ddb3aafcb06e60a5a667c4"
 url = "https://dl.google.com/go/go1.27.0.windows-amd64.zip"
 
+[[tools.gobrewtest-release]]
+version = "0.5.0"
+backend = "github:dhth/gobrewtest"
+specifiers = ["v0.5.0"]
+
+[tools.gobrewtest-release."platforms.linux-arm64"]
+checksum = "sha256:3d7add276228a5493b7dc6cb93524fc19004ab5d4c234e0e8360a685e681e3d5"
+url = "https://github.com/dhth/gobrewtest/releases/download/v0.5.0/gobrewtest_0.5.0_linux_arm64.tar.gz"
+url_api = "https://api.github.com/repos/dhth/gobrewtest/releases/assets/535399694"
+
+[tools.gobrewtest-release."platforms.linux-arm64-musl"]
+checksum = "sha256:3d7add276228a5493b7dc6cb93524fc19004ab5d4c234e0e8360a685e681e3d5"
+url = "https://github.com/dhth/gobrewtest/releases/download/v0.5.0/gobrewtest_0.5.0_linux_arm64.tar.gz"
+url_api = "https://api.github.com/repos/dhth/gobrewtest/releases/assets/535399694"
+
+[tools.gobrewtest-release."platforms.linux-x64"]
+checksum = "sha256:be15958a249a04d7cd859664ad9aed924c5a4df317819b7319ef23f4ede7d0d9"
+url = "https://github.com/dhth/gobrewtest/releases/download/v0.5.0/gobrewtest_0.5.0_linux_amd64.tar.gz"
+url_api = "https://api.github.com/repos/dhth/gobrewtest/releases/assets/535399695"
+
+[tools.gobrewtest-release."platforms.linux-x64-musl"]
+checksum = "sha256:be15958a249a04d7cd859664ad9aed924c5a4df317819b7319ef23f4ede7d0d9"
+url = "https://github.com/dhth/gobrewtest/releases/download/v0.5.0/gobrewtest_0.5.0_linux_amd64.tar.gz"
+url_api = "https://api.github.com/repos/dhth/gobrewtest/releases/assets/535399695"
+
+[tools.gobrewtest-release."platforms.macos-arm64"]
+checksum = "sha256:f87c6e25cf801fa8eb08a7b9599cc7496a5311178c032ce54e70c1593e0ed976"
+url = "https://github.com/dhth/gobrewtest/releases/download/v0.5.0/gobrewtest_0.5.0_darwin_arm64.tar.gz"
+url_api = "https://api.github.com/repos/dhth/gobrewtest/releases/assets/535399706"
+
+[tools.gobrewtest-release."platforms.macos-x64"]
+checksum = "sha256:35b90ce88dd7a08f946c805ab18ad91a4c1446f1fa25def768194f1426902027"
+url = "https://github.com/dhth/gobrewtest/releases/download/v0.5.0/gobrewtest_0.5.0_darwin_amd64.tar.gz"
+url_api = "https://api.github.com/repos/dhth/gobrewtest/releases/assets/535399697"
+
 [[tools.goreleaser]]
 version = "2.18.0"
 backend = "aqua:goreleaser/goreleaser"
