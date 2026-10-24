@@ -7,7 +7,7 @@ gobrewtest-release = "github:dhth/gobrewtest"
 [tools]
 actionlint = "latest"
 cosign = "latest"
-go = "1.27.0"
+go = "1.27.3"
 goreleaser = "latest"
 yamlfmt = "latest"
 gobrewtest-release = "v0.5.0"
