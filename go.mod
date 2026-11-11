@@ -1,3 +1,3 @@
 module github.com/dhth/gobrewtest
 
-go 1.27.3
+go 1.27.4
